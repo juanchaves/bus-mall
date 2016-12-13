@@ -14,10 +14,6 @@ function Product(imgName) {
   allProducts.push(this);
 }
 
-// var img2 = document.createElement('img'); // use DOM HTMLImageElement
-// img2.src = 'image2.jpg';
-// img2.alt = 'alt text';
-// document.body.appendChild(img2)
 
 for (var i = 0; i < imgName.length; i++) {
   new Product(imgName[i]);
@@ -30,7 +26,10 @@ var centerImg = document.getElementById('center');
 var rightImg = document.getElementById('right');
 
 function getRandomImg() {
-  var num = Math.floor(Math.random()* imgName.length);
+  for (var i = 0; i < 3; i++) {
+    Math.floor(Math.random()* imgName.length);
+    return
+  }
   var img = allProducts[num].imgPath;
   leftImg.src = img;
   centerImg.src = img;
@@ -38,6 +37,8 @@ function getRandomImg() {
 }
 
 getRandomImg();
+
+
 
 
 ////Event Listener
