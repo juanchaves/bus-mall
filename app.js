@@ -14,21 +14,27 @@ function Product(imgName) {
   allProducts.push(this);
 }
 
+// var img2 = document.createElement('img'); // use DOM HTMLImageElement
+// img2.src = 'image2.jpg';
+// img2.alt = 'alt text';
+// document.body.appendChild(img2)
+
 for (var i = 0; i < imgName.length; i++) {
   new Product(imgName[i]);
 }
 //Functions
 ///Event Handler
 ////Random Image Generator
+var leftImg = document.getElementById('left');
+var centerImg = document.getElementById('center');
+var rightImg = document.getElementById('right');
+
 function getRandomImg() {
   var num = Math.floor(Math.random()* imgName.length);
-  var img = allProducts[num];
-  document.getElementById('left').src = img;
-  // var leftImg = getElementById('left');
-  // var centerImg = getElementById('center');
-  // var rightImg = getElementById('right');
-  // document.write (imgStr.getElementById('left'))
-  // document.getElementById('left')
+  var img = allProducts[num].imgPath;
+  leftImg.src = img;
+  centerImg.src = img;
+  rightImg.src =img;
 }
 
 getRandomImg();
